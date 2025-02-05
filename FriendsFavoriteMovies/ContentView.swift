@@ -2,23 +2,25 @@
 //  ContentView.swift
 //  FriendsFavoriteMovies
 //
-//  Created by Emerson Day on 2/4/25.
+
 //
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView{
+            Tab("Friends", systemImage: "person.and.person"){
+                FriendList()
+            }
+            Tab("Movies", systemImage: "film.stack"){
+                Text("Movies")
+            }
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
+        .modelContainer(for: Friend.self, inMemory: true)
 }
