@@ -14,7 +14,7 @@ struct ContentView: View {
                 FriendList()
             }
             Tab("Movies", systemImage: "film.stack"){
-                Text("Movies")
+                MovieList()
             }
         }
     }
@@ -22,5 +22,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Friend.self, inMemory: true)
+        .modelContainer(SampleData.shared.modelContainer)
 }
